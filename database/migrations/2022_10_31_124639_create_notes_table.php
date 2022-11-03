@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cheeses', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->string('name');
-            $table->string('type');
-            $table->string('description');
-          /*   $table->string('cheese_image'); */
-            $table->string('country_origin');
+            $table->string('title');
+            $table->longtext('text');
             $table->timestamps();
-
         });
     }
 
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cheeses');
+        Schema::dropIfExists('notes');
     }
 };

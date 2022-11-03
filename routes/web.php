@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\cheeseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +21,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('/cheese',CheeseController::class)->middleware(['auth']);
+Route::resource('/cheese',cheeseController::class)->middleware(['auth']);
+
+
+
+
 
 require __DIR__.'/auth.php';
