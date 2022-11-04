@@ -1,5 +1,5 @@
 <?php
-use App\Http\cheeseController;
+use App\Http\Controllers\cheeseController;
 use Illuminate\Support\Facades\Route;
 
 /*

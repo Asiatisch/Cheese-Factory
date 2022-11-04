@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cheese;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
 
 class cheeseController extends Controller
 {
@@ -13,9 +17,12 @@ class cheeseController extends Controller
      */
     public function index()
     {
-        $input = $request->all();
+        // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
+        $cheeses =  cheese::paginate(2);
 
-        return view('users');
+        return view('cheeseNotes.index')->with('cheeses', $cheeses);
+      
+       /*  return view('users'); */
     }
 
     /**
