@@ -20,7 +20,7 @@ class cheeseController extends Controller
         // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
         $cheeses =  cheese::paginate(2);
 
-        return view('cheeseNotes.index')->with('cheeses', $cheeses);
+        return view('cheese.index')->with('cheeses', $cheeses);
       
        /*  return view('users'); */
     }
@@ -32,7 +32,7 @@ class cheeseController extends Controller
      */
     public function create()
     {
-        //
+        return view('cheese.create');
     }
 
     /**
