@@ -72,20 +72,21 @@ class cheeseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cheese $cheese)
     {
-        //
+     //   $cheese = Cheese::where('id',$id)->firstOrFail();
+    //dd($cheese);
+       return view('cheese.show')->with('cheese', $cheese);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(cheese $cheese)
     {
-        //
+        return view('cheese.edit')->with('cheese', $cheese);
     }
 
     /**

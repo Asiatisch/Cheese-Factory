@@ -13,6 +13,9 @@
             <a href="{{route('cheese.create')}}" class="btn-links btn-lg mb-2" >+ add New Cheese</a>
         @forelse ($cheeses as $cheese)
         <div class="my-6 p-6 bg-white border-b border-gray-200">
+            <a href="{{route('cheese.show', $cheese)}}">
+
+            
             <h2 class="font-bold text-2xl">
                 {{$cheese->name}}
             </h2>
@@ -22,6 +25,7 @@
             </p>
 
             <span class="block mt-4 text-sm opacity-70">  {{$cheese->updated_at->diffForHumans()}}</span>
+        </a>
         </div>
       @empty 
       <p>no cheeses yet.</p>
