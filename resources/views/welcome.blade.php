@@ -33,7 +33,7 @@
                 </div>
             @endif
             <h1 class ="text-5xl">
-                Liten notes
+                Cheesehub
                 <h1>
     </body>
 </html>

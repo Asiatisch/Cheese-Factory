@@ -43,7 +43,27 @@ class cheeseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:120',
+            'description' =>'required'
+        ]
+        );
+/* 
+        $cheese = new cheese([
+            	'cheese_id' =>Auth:: id(),
+                'name'=> $request ->name,
+                'description'=> $request ->description,
+        ]); */
+
+        cheese::create([
+            'cheese_id' =>Auth:: id(),
+                'name'=> $request ->name,
+                'description'=> $request ->description,
+                'type'=>$request ->type,
+                'country_origin' => $request ->country_origin,
+        ]);
+
+        return to_route('cheese.index');
     }
 
     /**
