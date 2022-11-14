@@ -14,20 +14,21 @@
         <div class="my-6 p-6 bg-white border-b border-gray-200">
 
 
-            <form action="{{route('cheese.store',$cheese)}}" method="post ">
+        <form action="{{route('cheese.update', $cheese)}}" method="post">
                 @method('put')
                 @csrf
-                <input type="text" 
+                
+                <x-text-input 
+                type="text" 
                 name="name" 
                 field="name" 
-                placeholder="name" 
+                placeholder="Name" 
                 class="w-full"
                  autocomplete="off"
-                ></input>
+                 :value=" @old('name', $cheese->name)"
+                ></x-text-input>
 
-                @error('name')
-                   <div class="text-red-600 text-sm">{{$message}}</div> 
-                @enderror
+              
 
                 <x-textarea 
                 name="description" 
@@ -59,6 +60,7 @@
                  @enderror --}}
 
                 <button class="mt-6"> Save Cheese</button>
+    </form>
         </div>
       
 

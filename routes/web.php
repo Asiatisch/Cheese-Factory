@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 
 Route::resource('/cheese',cheeseController::class)->middleware(['auth']);
 
-
+Route::delete('/cheese',[(cheeseController::class), 'destroy']);
 
 
 

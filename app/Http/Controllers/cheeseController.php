@@ -18,7 +18,7 @@ class cheeseController extends Controller
     public function index()
     {
         // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
-        $cheeses =  cheese::paginate(2);
+        $cheeses =  cheese::paginate(5);
 
         return view('cheese.index')->with('cheeses', $cheeses);
       
@@ -93,12 +93,35 @@ class cheeseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Cheese  $cheese
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cheese $cheese)
     {
-        //
+      //  dd("hello");
+        $request->validate([
+            'name' => 'required|max:120',
+            'description' =>'required',
+            'type' =>'required',
+            'country_origin' =>'required',
+           
+        ]
+        );
+/* 
+        $cheese = new cheese([
+            	'cheese_id' =>Auth:: id(),
+                'name'=> $request ->name,
+                'description'=> $request ->description,
+        ]); */
+
+        $cheese->update([
+                'name'=> $request ->name,
+                'description'=> $request ->description,
+                'type'=>$request ->type,
+                'country_origin' => $request ->country_origin
+        ]);
+
+       return to_route('cheese.index');
     }
 
     /**
@@ -107,8 +130,10 @@ class cheeseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cheese $cheese)
     {
-        //
+        $cheese->delete();
+
+        return to_route('cheese.index')->with('success', 'cheese deleted successfully');
     }
 }

@@ -16,7 +16,15 @@
                 <p class="opacity-70 ml-8">
                     <strong>updated at :</strong>{{$cheese->updated_at->diffForHumans()}}
                 </p>
-                <a href="{{route('cheese.edit', $cheese) }}" class="btn-link">Edit Cheese</a>
+                 {{--   update --}}
+                 <a href="{{route('cheese.edit', $cheese)}}" class="btn-links btn-danger ml-4" >edit cheese</a>
+              
+                 {{--   delete --}}
+
+                 <form action="{{ route('cheese.destroy', $cheese) }}" method="post">
+                    @method('delete')
+                    @csrf
+                    <button type="submit" class="btn btn-danger ml-4" onclick="return confirm('Are you sure you want to delete?')">Delete cheese</button>
             </div>
 
           
