@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use App\Models\cheese;
 use Illuminate\Http\Request;
@@ -18,9 +18,12 @@ class cheeseController extends Controller
     public function index()
     {
         // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
+        $cheeses = auth::cheese();
+        $cheeses = authorizeRoles('admin');
+
         $cheeses =  cheese::paginate(5);
 
-        return view('cheese.index')->with('cheeses', $cheeses);
+        return view('admin.cheese.index')->with('cheeses', $cheeses);
       
        /*  return view('users'); */
     }
@@ -32,7 +35,7 @@ class cheeseController extends Controller
      */
     public function create()
     {
-        return view('cheese.create');
+        return view('admin.cheese.create');
     }
 
     /**
