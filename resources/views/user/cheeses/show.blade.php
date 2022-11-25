@@ -17,16 +17,16 @@
                     <strong>updated at :</strong>{{$cheese->updated_at->diffForHumans()}}
                 </p>
                  {{--   update --}}
-                 <a href="{{route('cheese.edit', $cheese)}}" class="btn-links btn-danger ml-4" >edit cheese</a>
-              
+             {{--     <a href="{{route('admin.cheese.edit', $cheese)}}" class="btn-links btn-danger ml-4" >edit cheese</a>
+               --}}
                  {{--   delete --}}
 
-                 <form action="{{ route('cheese.destroy', $cheese) }}" method="post">
+          {{--        <form action="{{ route('admin.cheese.destroy', $cheese) }}" method="post">
                     @method('delete')
                     @csrf
                     <button type="submit" class="btn btn-danger ml-4" onclick="return confirm('Are you sure you want to delete?')">Delete cheese</button>
             </div>
-
+ --}}
           
       
         <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">

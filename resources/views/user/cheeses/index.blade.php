@@ -10,10 +10,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            <a href="{{route('cheese.create')}}" class="btn-links btn-lg mb-2" >+ add New Cheese</a>
+            <a href="{{route('user.cheese.xxxx')}}" class="btn-links btn-lg mb-2" >+ add New Cheese</a>
         @forelse ($cheeses as $cheese)
         <div class="my-6 p-6 bg-white border-b border-gray-200">
-            <a href="{{route('cheese.show', $cheese)}}">
+            <a href="{{route('user.cheese.', $cheese)}}">
 
             
             <h2 class="font-bold text-2xl">

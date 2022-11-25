@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\cheese;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,8 @@ class cheeseController extends Controller
     public function index()
     {
         // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
-        $cheeses = auth::cheese();
-        $cheeses = authorizeRoles('admin');
+        $user = Auth::user();
+        $user->authorizeRoles('admin');
 
         $cheeses =  cheese::paginate(5);
 
