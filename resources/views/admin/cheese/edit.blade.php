@@ -14,7 +14,7 @@
         <div class="my-6 p-6 bg-white border-b border-gray-200">
 
 
-        <form action="{{route('cheese.update', $cheese)}}" method="post">
+        <form action="{{route('admin.cheese.update', $cheese)}}" method="post">
                 @method('put')
                 @csrf
                 

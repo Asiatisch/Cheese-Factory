@@ -13,7 +13,7 @@
         <div class="my-6 p-6 bg-white border-b border-gray-200">
 
 
-            <form action="{{route('cheese.store')}}" method="post">
+            <form action="{{route('admin.cheese.store')}}" method="post">
                 @csrf
                 <input type="text" 
                 name="name" 

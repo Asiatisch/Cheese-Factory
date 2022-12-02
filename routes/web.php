@@ -24,9 +24,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('/cheese',cheeseController::class)->middleware(['auth']);
+/* Route::resource('/cheese',cheeseController::class)->middleware(['auth']);
 
-Route::delete('/cheese',[(cheeseController::class), 'destroy']);
+Route::delete('/cheese',[(cheeseController::class), 'destroy']); */
 
 require __DIR__.'/auth.php';
 
