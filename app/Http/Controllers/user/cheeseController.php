@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\cheese;
@@ -19,12 +19,12 @@ class cheeseController extends Controller
     public function index()
     {
         // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
-        $cheeses = auth::cheese();
-        $cheeses = authorizeRoles('admin');
+        $user = Auth::user();
+        $user->authorizeRoles('user');
 
         $cheeses =  cheese::paginate(5);
 
-        return view('admin.cheese.index')->with('cheeses', $cheeses);
+        return view('user.cheese.index')->with('cheeses', $cheeses);
       
        /*  return view('users'); */
     }
@@ -36,7 +36,7 @@ class cheeseController extends Controller
      */
     public function create()
     {
-        return view('admin.cheese.create');
+       //*  return view('user.cheese.create'); */
     }
 
     /**
@@ -80,7 +80,7 @@ class cheeseController extends Controller
     {
      //   $cheese = Cheese::where('id',$id)->firstOrFail();
     //dd($cheese);
-       return view('cheese.show')->with('cheese', $cheese);
+       return view('user.cheese.show')->with('cheese', $cheese);
     }
     /**
      * Show the form for editing the specified resource.

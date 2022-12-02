@@ -16,6 +16,7 @@
                 <p class="opacity-70 ml-8">
                     <strong>updated at :</strong>{{$cheese->updated_at->diffForHumans()}}
                 </p>
+            </div>
                  {{--   update --}}
              {{--     <a href="{{route('admin.cheese.edit', $cheese)}}" class="btn-links btn-danger ml-4" >edit cheese</a>
                --}}
