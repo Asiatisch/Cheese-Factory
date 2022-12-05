@@ -33,11 +33,19 @@
            
             
             <h2 class="font-bold text-4xl">
-                {{$cheese->name}}
+                Name {{$cheese->name}}
             </h2>
 
-            <p class="mt-6 whitespace-pre-wrap">{{($cheese->description)}} </p>
-                
+            <p class="mt-6 whitespace-pre-wrap">description{{($cheese->description)}} </p>
+
+            <p class="mt-6 whitespace-pre-wrap">
+                Customer name {{$cheese->customer->name}}
+           </p>
+            
+            <p class="mt-6 whitespace-pre-wrap">
+                 Customer address{{$cheese->$customer->address}}
+            </p>
+
            
 
            

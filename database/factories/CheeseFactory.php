@@ -19,8 +19,9 @@ class CheeseFactory extends Factory
         return [
            'name' =>$this ->faker->text(10),
            'type' =>$this ->faker->text(10),
-           'description' =>$this ->faker->text(255),
-           'country_origin' =>$this ->faker->text(20),
+           'description' =>$this->faker->text(255),
+           'country_origin' =>$this->faker->text(20),
+           'customer_id' => 1
         ];
     }
 }

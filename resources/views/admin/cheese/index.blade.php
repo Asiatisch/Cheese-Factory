@@ -15,6 +15,12 @@
         <div class="my-6 p-6 bg-white border-b border-gray-200">
             <a href="{{route('user.cheese.show', $cheese)}}">
 
+
+                <h3 class="font-bold text-1xl"><strong> Customer name {{($cheese->Customer->name)}}</strong></h3>
+                {{($cheese->address)}}
+                {{($cheese->description)}}
+
+
             
             <h2 class="font-bold text-2xl">
                 {{$cheese->name}}
@@ -30,7 +36,7 @@
       @empty 
       <p>no cheeses yet.</p>
         @endforelse
-        {{$cheeses->links()}}
+        {{-- {{$cheeses->links()}} --}}
 
         </div>
     </div>

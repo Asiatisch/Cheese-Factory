@@ -22,7 +22,8 @@ class cheeseController extends Controller
         $user = Auth::user();
         $user->authorizeRoles('admin');
 
-        $cheeses =  cheese::paginate(5);
+       // $cheeses =  cheese::paginate(5);
+       $cheeses =  cheese::with('customer')->get();
 
         return view('admin.cheese.index')->with('cheeses', $cheeses);
       

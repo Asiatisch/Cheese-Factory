@@ -30,7 +30,7 @@
       @empty 
       <p>no cheeses yet.</p>
         @endforelse
-        {{$cheeses->links()}}
+        {{-- {{$cheeses->links()}} --}}
 
         </div>
     </div>

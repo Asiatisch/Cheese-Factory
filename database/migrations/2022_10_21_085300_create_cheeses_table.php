@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('cheeses', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('cheese_id');
+           /*  $table->foreignid('cheese_id'); */
             $table->string('name');
             $table->string('type');
             $table->string('description');
