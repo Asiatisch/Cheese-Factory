@@ -68,7 +68,7 @@ class cheeseController extends Controller
                 'country_origin' => $request ->country_origin,
         ]);
 
-        return to_route('cheese.index');
+        return to_route('admin.cheese.index');
     }
 
     /**
@@ -81,7 +81,7 @@ class cheeseController extends Controller
     {
      //   $cheese = Cheese::where('id',$id)->firstOrFail();
     //dd($cheese);
-       return view('cheese.show')->with('cheese', $cheese);
+       return view('admin.cheese.show')->with('cheese', $cheese);
     }
     /**
      * Show the form for editing the specified resource.
@@ -91,7 +91,7 @@ class cheeseController extends Controller
      */
     public function edit(cheese $cheese)
     {
-        return view('cheese.edit')->with('cheese', $cheese);
+        return view('admin.cheese.edit')->with('cheese', $cheese);
     }
 
     /**
@@ -126,7 +126,7 @@ class cheeseController extends Controller
                 'country_origin' => $request ->country_origin
         ]);
 
-       return to_route('cheese.index');
+       return to_route('admin.cheese.index');
     }
 
     /**
@@ -139,6 +139,6 @@ class cheeseController extends Controller
     {
         $cheese->delete();
 
-        return to_route('cheese.index')->with('success', 'cheese deleted successfully');
+        return to_route('admin.cheese.index')->with('success', 'cheese deleted successfully');
     }
 }

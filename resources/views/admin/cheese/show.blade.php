@@ -43,7 +43,7 @@
            </p>
             
             <p class="mt-6 whitespace-pre-wrap">
-                 Customer address{{$cheese->$customer->address}}
+                 Customer address{{$cheese->customer->address}}
             </p>
 
            

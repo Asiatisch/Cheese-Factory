@@ -13,7 +13,7 @@
             <a href="{{route('admin.cheese.create')}}" class="btn-links btn-lg mb-2" >+ add New Cheese</a>
         @forelse ($cheeses as $cheese)
         <div class="my-6 p-6 bg-white border-b border-gray-200">
-            <a href="{{route('user.cheese.show', $cheese)}}">
+            <a href="{{route('admin.cheese.show', $cheese)}}">
 
 
                 <h3 class="font-bold text-1xl"><strong> Customer name {{($cheese->Customer->name)}}</strong></h3>

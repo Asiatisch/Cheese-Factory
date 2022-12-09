@@ -24,8 +24,8 @@ class userSeeder extends Seeder
          $role_user = Role::where('name', 'user')->first();
 
          $admin = new User();
-         $admin->name = 'Anne Wright';
-         $admin->email = 'anne@larafest.ie';
+         $admin->name = 'Shem Resc';
+         $admin->email = 'Shem@Resc.ie';
          $admin->password = Hash::make('password');
          $admin->save();
 

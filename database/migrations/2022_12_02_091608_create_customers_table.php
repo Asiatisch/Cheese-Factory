@@ -29,9 +29,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('cheeses', function(Blueprint $table) {
-            $table->dropForeign('customer_id');
-            $table->dropColumn('customer_id');
-        });
+        Schema::dropIfExists('customers');
+        // Schema::table('customers', function(Blueprint $table) {
+        //     // $table->dropForeign('customer_id');
+        //     // $table->dropColumn('customer_id');
+
+        // });
     }
 };

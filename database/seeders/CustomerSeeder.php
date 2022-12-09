@@ -17,7 +17,7 @@ class CustomerSeeder extends Seeder
     {
         Customer::factory()
         ->times(3)
-        // ->hasCheeses(4)
+        ->hasCheeses(10)
         ->create();
     }
 }
