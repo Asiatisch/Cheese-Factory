@@ -16,4 +16,8 @@ class Cheese extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+    public function artisans()
+    {
+        return $this->belongsToMany(artisan::class)->withTimestamps();
+    }
 }
