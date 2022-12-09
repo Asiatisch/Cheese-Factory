@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\cheeseController as UsercheeseController;
 use App\Http\Controllers\Admin\cheeseController as AdmincheeseController;
 
+use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
+use App\Http\Controllers\user\CustomerController as UserCustomerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +39,7 @@ Route:: get('/home', [HomeController::class,'index'])->name('home');
 
 Route::resource('/admin/cheese',AdmincheeseController::class)->middleware(['auth'])->names('admin.cheese');
 
+Route::resource('/admin/customer',AdminCustomerController::class)->middleware(['auth'])->names('admin.customer');
+
 Route::resource('/user/cheese',UsercheeseController::class)->middleware(['auth'])->names('user.cheese')->only(['index','show']);
+Route::resource('/user/customer',UserCustomerController::class)->middleware(['auth'])->names('user.customer')->only(['index','show']);

@@ -3,7 +3,7 @@
 
         
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cheese factory') }}
+            {{ __('Customer') }}
         </h2>
     </x-slot>
 
@@ -13,7 +13,7 @@
         <div class="my-6 p-6 bg-white border-b border-gray-200">
 
 
-            <form action="{{route('admin.cheese.store')}}" method="post">
+            <form action="{{route('admin.customer.store')}}" method="post">
                 @csrf
                 <input type="text" 
                 name="name" 
@@ -28,35 +28,29 @@
                 @enderror
 
                 <x-textarea 
-                name="description" 
+                name="email" 
                 rows="10" 
-                field="description" 
-                placeholder="Type in the description of the cheese" 
+                field="email" 
+                placeholder="Type in the customers email" 
                 class="w-full mt-6"
-                :value="@old('description')"></x-textarea>
+                :value="@old('email')"></x-textarea>
 
                 <x-textarea 
-                name="type" 
+                name="address" 
                 rows="10" 
                 field="type" 
-                placeholder="Type in the type of cheese." 
+                placeholder="Type in the address" 
                 class="w-full mt-6"
-                :value="@old('description')"></x-textarea>
+                :value="@old('address')"></x-textarea>
 
-                <x-textarea 
-                name="country_origin" 
-                rows="10" 
-                field="country_origin" 
-                placeholder="Type cheese origin." 
-                class="w-full mt-6"
-                :value="@old('description')"></x-textarea>
+              
 
 
                {{--  @error('description')
                 <div class="text-red-600 text-sm">{{$message}}</div> 
                  @enderror --}}
 
-                <button class="mt-6"> Save Cheese</button>
+                <button class="mt-6"> Save customer</button>
         </div>
       
 

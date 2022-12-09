@@ -19,7 +19,7 @@ class cheeseController extends Controller
     public function index()
     {
         // $cheeses =  cheese::where('cheese_id', Auth::id())->latest('updated_at')->paginate(10);
-        $user = Auth::user();
+       $user = Auth::user();
         $user->authorizeRoles('admin');
 
        // $cheeses =  cheese::paginate(5);

@@ -9,17 +9,17 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!--alert-success is a component which I created using php artisan make:component alert-success
             have a look at the code in views/components/alert-success.blade.php -->
-            {{-- <x-alert-success>
+            <x-alert-success>
                 {{ session('success') }}
-            </x-alert-success> --}}
+            </x-alert-success>
 
             <div class="flex">
 
                 <!-- when EDIT BUTTON is clicked, route to admin.publishers.edit -->
-                <a href="{{ route('admin.customer.edit', $customer) }}" class="btn-link ml-auto">Edit</a>
+                <a href="{{ route('admin.customers.edit', $customer) }}" class="btn-link ml-auto">Edit</a>
 
                 <!-- delete button is wrapped in a form, with the delete method. -->
-                <form action="{{ route('admin.customer.destroy', $customer) }}" method="post">
+                <form action="{{ route('admin.customer.destroy', $publisher) }}" method="post">
                     @method('delete')
                     @csrf
                     <button type="submit" class="btn btn-danger ml-4" onclick="return confirm('Are you sure you want to delete?')">Delete </button>
