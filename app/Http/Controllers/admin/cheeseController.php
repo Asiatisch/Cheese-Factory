@@ -109,6 +109,7 @@ class cheeseController extends Controller
             'description' =>'required',
             'type' =>'required',
             'country_origin' =>'required',
+            
            
         ]
         );

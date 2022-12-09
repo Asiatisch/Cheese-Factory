@@ -41,10 +41,6 @@
                     <td>{{($cheese->description)}}</td>
                 </tr>
                 <tr>
-                    <td class="font-bold"> cheese Type: </td>
-                    <td>{{($cheese->type)}}</td>
-                </tr>
-                <tr>
                     <td class="font-bold">Customer name: </td>
                     <td>{{$cheese->customer->name}}</td>
                 </tr>
